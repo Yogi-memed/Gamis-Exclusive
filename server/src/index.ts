@@ -21,3 +21,18 @@ keranjang.tambah(gamis2, 2);
 
 console.log("Jumlah baris:", keranjang.getItems().length);
 console.log("Total:", keranjang.getTotal());
+import { Customer } from "./models/Customer.js";
+import { Admin } from "./models/Admin.js";
+
+const pembeli = new Customer(
+  1,
+  "Siti",
+  "siti@mail.com",
+  "rahasia123",
+  "Jakarta",
+);
+const bos = new Admin(2, "Yogi", "yogi@mail.com", "admin123");
+
+console.log(pembeli.nama, "-", pembeli.getRole(), "-", pembeli.alamat);
+console.log(bos.nama, "-", bos.getRole());
+console.log("Password benar?", pembeli.cekPassword("rahasia123"));
